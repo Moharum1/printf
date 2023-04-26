@@ -9,8 +9,10 @@
  */
 int main(void)
 {
-
-	_printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+	_printf("%%");
+	_printf("Should print a single percent sign: %%\n");
+	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+	_printf("css%ccs%scscscs", 'T', "Test");
 
 	return (1);
 
