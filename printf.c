@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	va_start(ap,format);
 	counter = 0;
 
-	for (ch_char = format; *ch_char != '\0'; ch_char++)
+	for (ch_char = (char *)format; *ch_char != '\0'; ch_char++)
 	{
 		/*
 		while (*ch_char != '%')
