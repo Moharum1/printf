@@ -9,14 +9,10 @@
  */
 int main(void)
 {
-	_printf("%%");
-	_printf("Should print a single percent sign: %%\n");
-	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-	_printf("css%ccs%scscscs", 'T', "Test");
-
-	_printf("%K\n");
-	_printf("%!\n");
-
+	_printf("%d", 1024);
+	_printf("%d", -1024);
+	_printf("%d", 0);
+	_printf("%d", INT_MAX);
 	return (1);
 
 }

@@ -6,11 +6,19 @@
  *
  * Return: NULL.
  */
-void putint(int x)
+void putint(int n)
 {
-	if (x)
+	unsigned int n1;
+
+	if (n < 0)
 	{
-		putint(x / 10);
-		_putchar('0' + x % 10);
+		_putchar('-');
+		n1 = -n;
 	}
+	else
+		n1 = n;
+
+	if (n1 / 10)
+		putint(n1 / 10);
+	_putchar((n1 % 10) + '0');
 }

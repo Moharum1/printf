@@ -67,8 +67,6 @@ int _printf(const char *format, ...)
 					ch_char++;
 					_putchar(*ch_char);
 					break;
-
-
 			}
 		}
 		else 
