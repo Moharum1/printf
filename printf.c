@@ -49,23 +49,28 @@ int _printf(const char *format, ...)
 			
 				case 'i':
 					i = va_arg(ap, int);
-					putint(i);
+					counter += putint(i);
 					break;
 			
 				case 'd':
 					i = va_arg(ap, int);
-					putint(i);
+					counter += putint(i);
 					break;
 
 				case '%':
-					_putchar('%');
+					counter = counter + _putchar('%');
+					break;
+
+				case 'b':
+					i = va_arg(ap , unsigned int);
+					_putchar(i);
 					break;
 
 				default :
 					ch_char--;
-					_putchar(*ch_char);
+					counter += _putchar(*ch_char);
 					ch_char++;
-					_putchar(*ch_char);
+					counter += _putchar(*ch_char);
 					break;
 			}
 		}

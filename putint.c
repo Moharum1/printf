@@ -6,13 +6,14 @@
  *
  * Return: NULL.
  */
-void putint(int n)
+int putint(int n)
 {
+	int counter = 0;
 	unsigned int n1;
 
 	if (n < 0)
 	{
-		_putchar('-');
+		counter += _putchar('-');
 		n1 = -n;
 	}
 	else
@@ -20,5 +21,7 @@ void putint(int n)
 
 	if (n1 / 10)
 		putint(n1 / 10);
-	_putchar((n1 % 10) + '0');
+	counter += _putchar((n1 % 10) + '0');
+
+	return (counter);
 }
