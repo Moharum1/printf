@@ -61,6 +61,14 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					break;
 
+				default :
+					ch_char--;
+					_putchar(*ch_char);
+					ch_char++;
+					_putchar(*ch_char);
+					break;
+
+
 			}
 		}
 		else 
