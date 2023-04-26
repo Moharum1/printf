@@ -23,26 +23,6 @@ int _printf(const char *format, ...)
 
 	for (ch_char = (char *)format; *ch_char != '\0'; ch_char++)
 	{
-		/*
-		while (*ch_char != '%')
-		{
-			if (*ch_char != '\0')
-			{
-				_putchar(*ch_char);
-				ch_char++;
-				counter++;
-			}
-			else
-			{
-				ch_char = ch_char - 2;
-				counter = counter + 2;
-				break;
-			}
-		}
-
-		ch_char++;
-		counter++;*/
-
 		if (*ch_char == '%')
 		{
 			ch_char++;
@@ -71,11 +51,16 @@ int _printf(const char *format, ...)
 					i = va_arg(ap, int);
 					putint(i);
 					break;
+
+				case '%':
+					_putchar('%');
+					break;
+
 			}
 		}
 		else 
 		{
-			counter += _putchar(*ch_char);
+			counter += _putchar(*ch_char);	
 		}
 	}
 
