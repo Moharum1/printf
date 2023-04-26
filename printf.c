@@ -63,7 +63,7 @@ int _printf(const char *format, ...)
 
 				case 'b':
 					i = va_arg(ap , unsigned int);
-					_putchar(i);
+					counter += to_binary(i);
 					break;
 
 				default :

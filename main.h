@@ -4,4 +4,6 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int putint(int n);
+int to_binary(unsigned int num);
+
 #endif
