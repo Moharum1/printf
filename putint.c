@@ -2,7 +2,7 @@
 
 /**
  * putint - writes the integer  c to stdout
- * @x: The integer  to print
+ * @n: The integer  to print
  *
  * Return: NULL.
  */
