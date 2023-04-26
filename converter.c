@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * to_binary - convert a number to binary
@@ -12,7 +11,7 @@ int to_binary(unsigned int num)
 	int count = 0;
 	if (num == 0)
 	{
-		printf("0");
+		_putchar('0');
 		count++;
 	}
 	else
@@ -26,17 +25,17 @@ int to_binary(unsigned int num)
 		{
 			if (num & (1u << shift))
 			{
-				printf("1");
+				_putchar('1');
 			       	count++;
 			}
 			else
 			{
-				printf("0");
+				_putchar('0');
 				count++;
 			}
 			shift--;
 		}
 	}
-       	return count;
+       	return (count);
 }
 

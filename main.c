@@ -9,9 +9,8 @@
  */
 int main(void)
 {
-	int l1;
-	l1 = _printf("%b\n", 98);
-	printf("%d\n",l1);
+	_printf("There is %b bytes in %b KB\n", 1024, 1);
+	_printf("%b - %b = %b\n", 2048, 1024, 1024);
 	return (1);
 
 }
