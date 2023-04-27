@@ -9,12 +9,11 @@
  */
 int main(void)
 {
-	_printf("%o\n", 1024);
-	_printf("%o\n", -1024);
-	_printf("%o\n", 0);
-	_printf("%o\n", UINT_MAX);
-	_printf("There is %o bytes in %o KB\n", 1024, 1);
-	_printf("%o - %o = %o\n", 2048, 1024, 1024);
+	_printf("%S\n", "No special character.");
+	_printf("%S\n", "\n");
+	_printf("%S\n", "\x01\x02\x03\x04\x05\x06\x07");
+	_printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+	_printf("");
 	return (1);
 
 }

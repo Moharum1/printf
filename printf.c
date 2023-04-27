@@ -42,21 +42,32 @@ int _printf(const char *format, ...)
 					s = va_arg(ap, char *);
 					while (*s != '\0')
 					{
-						if (*s == '\')
-						{
-							counter += _putchar(*s);
-							counter += _putchar('x');
-							s++;
-							counter += _to_Hex(*s);
-							s++;
-						}
-						else
-						{
-							counter += _putchar(*s);
-							s++;
-						}
+						counter += _putchar(*s);
+						s++;
 					}
 					break;
+				
+				
+				case 'S':
+                                        s = va_arg(ap, char *);
+                                        while (*s != '\0')
+                                        {
+                                                if (*s == '\\')
+                                                {
+                                                        counter += _putchar(*s);
+                                                        counter += _putchar('x');
+                                                        s++;
+                                                        counter += to_Hex(*s);
+                                                        s++;
+                                                }
+                                                else
+                                                {
+                                                        counter += _putchar(*s);
+                                                        s++;
+                                                }
+                                        }
+                                        break;
+
 			
 				case 'i':
 					i = va_arg(ap, int);
