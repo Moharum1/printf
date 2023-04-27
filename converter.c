@@ -42,27 +42,20 @@ int to_binary(unsigned int num)
 
 int to_octal(unsigned int num)
 {
+	int oct[20];
 	int i = 0;
-	int counter = 0;
-	int *result = malloc(sizeof(int) * 12);
 	int j;
 
-	do
+	while (num > 0)
 	{
-		result[i++] = (num % 8);
+		oct[i++] = num % 8;
 		num /= 8;
-		counter++;
 	}
-	while (num != 0);
+	
+	for (j = i - 1; j >= 0; j--)
+		_putchar(oct[j]); 
 
-	for (j = 0; j < counter; j++)
-	{
-		_putchar(result[counter-j]);
-	}
-
-	free(result);
-
-	return (counter);
+	return (i);
 }
 
 

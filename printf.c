@@ -42,8 +42,19 @@ int _printf(const char *format, ...)
 					s = va_arg(ap, char *);
 					while (*s != '\0')
 					{
-						counter += _putchar(*s);
-						s++;
+						if (*s == '\')
+						{
+							counter += _putchar(*s);
+							counter += _putchar('x');
+							s++;
+							counter += _to_Hex(*s);
+							s++;
+						}
+						else
+						{
+							counter += _putchar(*s);
+							s++;
+						}
 					}
 					break;
 			
