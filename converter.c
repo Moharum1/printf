@@ -39,3 +39,88 @@ int to_binary(unsigned int num)
        	return (count);
 }
 
+
+int to_octal(unsigned int num)
+{
+	int i = 0;
+	int counter = 0;
+	int *result = malloc(sizeof(int) * 12);
+	int j;
+
+	do
+	{
+		result[i++] = (num % 8);
+		num /= 8;
+		counter++;
+	}
+	while (num != 0);
+
+	for (j = 0; j < counter; j++)
+	{
+		_putchar(result[counter-j]);
+	}
+
+	free(result);
+
+	return (counter);
+}
+
+
+int to_Hex(unsigned int num)
+{
+	char result[9];
+	int i = 0;
+	int j;	
+
+	do
+	{
+		int hex_digit = num % 16;
+		if (hex_digit < 10)
+		{
+			result[i++] = hex_digit + '0';
+		}
+		else
+		{
+			result[i++] = hex_digit - 10 + 'A';
+		}
+		num /= 16;
+	} 
+	while (num != 0);
+	
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(result[j]);
+	}
+    
+    return (i);
+}
+
+int to_hex(unsigned int num)
+{
+        char result[9];
+        int i = 0;
+	int j;
+
+        do
+        {
+                int hex_digit = num % 16;
+                if (hex_digit < 10)
+                {
+                        result[i++] = hex_digit + '0';
+                }
+                else
+                {
+                        result[i++] = hex_digit - 10 + 'a';
+                }
+                num /= 16;
+        }
+        while (num != 0);
+
+        for (j = i - 1; j >= 0; j--)
+        {
+                _putchar(result[j]);
+        }
+
+    return (i);
+}
+

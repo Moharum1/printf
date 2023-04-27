@@ -62,8 +62,28 @@ int _printf(const char *format, ...)
 					break;
 
 				case 'b':
-					i = va_arg(ap , unsigned int);
+					i = va_arg(ap, unsigned int);
 					counter += to_binary(i);
+					break;
+
+				case 'o':
+					i = va_arg(ap, unsigned int);
+					counter += to_octal(i);
+					break;
+
+				case 'u':
+					i = va_arg(ap, unsigned int);
+					counter += put_unsign(i);
+					break;
+
+				case 'X':
+					i = va_arg(ap, unsigned int);
+					counter += to_Hex(i);
+					break;
+
+				case 'x':
+					i = va_arg(ap, unsigned int);
+					counter += to_hex(i);
 					break;
 
 				default :
